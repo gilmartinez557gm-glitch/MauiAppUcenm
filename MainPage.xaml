@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppUcenm.MainPage"
+             Title="Registro de persona">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="8">
+
+            <Label
+                Text="Datos personales"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Complete todos los campos. Los datos se validarán antes de mostrarse."
+                Style="{StaticResource SubHeadline}"
+                Margin="0,0,0,12" />
+
+            <Label Text="ID" />
+            <Entry
+                x:Name="IdEntry"
+                Placeholder="Ej. 1001"
+                Keyboard="Numeric"
+                MaxLength="9"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="Identificador numérico de la persona" />
+
+            <Label
+                x:Name="IdErrorLabel"
+                Text="Ingrese un ID numérico positivo de hasta 9 dígitos."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Label Text="Nombres" Margin="0,8,0,0" />
+            <Entry
+                x:Name="NombresEntry"
+                Placeholder="Ej. María José"
+                MaxLength="60"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Label
+                x:Name="NombresErrorLabel"
+                Text="Use únicamente letras, espacios, apóstrofes o guiones."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Label Text="Apellidos" Margin="0,8,0,0" />
+            <Entry
+                x:Name="ApellidosEntry"
+                Placeholder="Ej. López Martínez"
+                MaxLength="60"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Label
+                x:Name="ApellidosErrorLabel"
+                Text="Use únicamente letras, espacios, apóstrofes o guiones."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Label Text="Fecha de nacimiento" Margin="0,8,0,0" />
+            <DatePicker
+                x:Name="FechaNacimientoPicker"
+                Format="dd/MM/yyyy" />
+
+            <Label
+                x:Name="FechaNacimientoErrorLabel"
+                Text="Seleccione una fecha de nacimiento válida."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Label Text="Dirección" Margin="0,8,0,0" />
+            <Entry
+                x:Name="DireccionEntry"
+                Placeholder="Ej. Barrio El Centro, casa #10"
+                MaxLength="150"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Label
+                x:Name="DireccionErrorLabel"
+                Text="Ingrese una dirección válida de al menos 5 caracteres."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Label Text="Teléfono" Margin="0,8,0,0" />
+            <Entry
+                x:Name="TelefonoEntry"
+                Placeholder="Ej. +504 9999-9999"
+                Keyboard="Telephone"
+                MaxLength="20"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Label
+                x:Name="TelefonoErrorLabel"
+                Text="Ingrese entre 8 y 15 dígitos; puede usar +, espacios o guiones."
+                TextColor="Red"
+                FontSize="12"
+                IsVisible="False" />
+
+            <Button
+                Text="Mostrar datos"
+                Margin="0,20,0,16"
+                Clicked="OnMostrarDatosClicked"
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="Valida y muestra los datos capturados" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

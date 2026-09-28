@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppUcenm.Views.PersonasPage"
+             Title="Registro de Personas">
+
+    <ScrollView>
+
+        <VerticalStackLayout 
+            Padding="30"
+            Spacing="15">
+
+            <Label
+                Text="Registro de Personas"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                FontSize="28" />
+
+            <Entry
+                x:Name="IdEntry"
+                Placeholder="ID de la persona"
+                Keyboard="Numeric"
+                MaxLength="9"
+                IsEnabled="False"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="ID de la persona" />
+
+            <Entry
+                x:Name="NombresEntry"
+                Placeholder="Nombres"
+                Keyboard="Text"
+                MaxLength="100"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="Nombres de la persona" />
+
+            <Entry
+                x:Name="ApellidosEntry"
+                Placeholder="Apellidos"
+                Keyboard="Text"
+                MaxLength="100"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="Apellidos de la persona" />
+
+            <DatePicker
+                x:Name="FechaNacimientoPicker"
+                SemanticProperties.Description="Fecha de nacimiento de la persona" />
+
+            <Entry
+                x:Name="DireccionEntry"
+                Placeholder="Dirección"
+                MaxLength="200"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="Dirección de la persona" />
+
+            <Entry
+                x:Name="TelefonoEntry"
+                Placeholder="Teléfono"
+                Keyboard="Numeric"
+                MaxLength="15"
+                ClearButtonVisibility="WhileEditing"
+                SemanticProperties.Description="Teléfono de la persona" />
+
+            <Button
+                x:Name="GuardarButton"
+                Text="Guardar"
+                SemanticProperties.Hint="Guarda la información de la persona"
+                Clicked="GuardarButton_Clicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
